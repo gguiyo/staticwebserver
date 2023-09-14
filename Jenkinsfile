@@ -2,8 +2,19 @@ pipeline {
   agent any
   stages {
     stage('listar directorio') {
-      steps {
-        sh 'pwd && ls -al'
+      parallel {
+        stage('listar directorio') {
+          steps {
+            sh 'pwd && ls -al'
+          }
+        }
+
+        stage('') {
+          steps {
+            sh 'yum install -y apache2'
+          }
+        }
+
       }
     }
 
