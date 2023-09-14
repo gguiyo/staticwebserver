@@ -11,7 +11,7 @@ pipeline {
 
         stage('error') {
           steps {
-            sh 'yum install -y apache2'
+            sh 'sudo yum install -y apache2'
           }
         }
 
